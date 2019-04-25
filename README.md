@@ -4,16 +4,12 @@
 
 ## Getting Started
 ```sh
-git clone https://github.com/ariesmcrae/reactjs-crud-boilerplate.git
+git clone https://github.com/swiftiestyle/CRUDReactApp.git
 
-cd reactjs-crud-boilerplate
+cd CRUDReactApp
 
-yarn install
-    or
 npm install
 
-yarn start
-    or
 npm start
 ```
 

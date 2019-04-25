@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import toastr from 'toastr';
-import * as courseAction from '../../action/CourseAction';
+import * as courseAction3 from '../../action/CourseAction3';
 import * as authorAction from '../../action/AuthorAction';
 import CourseForm from './CourseForm'; // eslint-disable-line import/no-named-as-default
 import { authorsFormattedForDropdown } from '../../selectors/selectors'; // eslint-disable-line import/no-named-as-default
 
 
-export class AddOrEditCourseContainer extends React.Component {
+export class AddOrEditCourseContainer3 extends React.Component {
 
 
     constructor() {
@@ -46,7 +46,7 @@ export class AddOrEditCourseContainer extends React.Component {
         this.props.action.saveCourseAction(course)
             .then(() => {
                 toastr.success('Course saved');
-                this.props.history.push('/');
+                this.props.history.push('/course3');
             }).catch(error => {
                 toastr.error(error);
             });
@@ -56,7 +56,7 @@ export class AddOrEditCourseContainer extends React.Component {
 
     handleCancel(event) {
         event.preventDefault();
-        this.props.history.replace('/');
+        this.props.history.replace('/course3');
     }
 
 
@@ -99,12 +99,12 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => ({
-    action: bindActionCreators({ ...authorAction, ...courseAction }, dispatch)
+    action: bindActionCreators({ ...authorAction, ...courseAction3 }, dispatch)
 });
 
 
 
-AddOrEditCourseContainer.propTypes = {
+AddOrEditCourseContainer3.propTypes = {
     action: PropTypes.object.isRequired,
     history: PropTypes.object,
     authors: PropTypes.array,
@@ -114,4 +114,4 @@ AddOrEditCourseContainer.propTypes = {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddOrEditCourseContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AddOrEditCourseContainer3);
